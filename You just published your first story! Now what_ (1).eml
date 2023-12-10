@@ -1,0 +1,420 @@
+Delivered-To: acsd2397@gmail.com
+Received: by 2002:a54:250e:0:b0:23f:a76b:30d2 with SMTP id q14csp2279584eco;
+        Sat, 25 Nov 2023 18:14:27 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG+bhDOo6ewVotcfWlyDJiX2Gw4X5VFc9k0KMYXdYa9YrviMU6+4CYwGXRzHari6pnZ26pb
+X-Received: by 2002:a05:6808:1704:b0:3b2:eab1:91c with SMTP id bc4-20020a056808170400b003b2eab1091cmr3286738oib.29.1700964867057;
+        Sat, 25 Nov 2023 18:14:27 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1700964867; cv=none;
+        d=google.com; s=arc-20160816;
+        b=J5uDkkjqTm+ScpAtACMKjcjyxyQd+4SpGusStzG7gx1TL0Jpd10ePocro5kCs6dO2W
+         RdPaVoGS6rmsOrSzEd2jrkH0kaUkhwZwkPOp4wbTQp+DCmQjZ1HxICuEZPpUXpSzbDhq
+         FBgWFa0CecW4s116KYX14aArxyHG1gd2EqiuvaM6uwsRYKuFkyZlv8+0PhGNYHh+XP6f
+         BmDGyBFnuPhoa+glnhs0I5OFDKNcAixcVJAwphccdAy9xmnyV1ft/ACa2DZUMJ73hi54
+         cTvI0bnCGD6yHqBu0rlGb2C+t2kvWVkrQrydme45G0xiJjRh7ieeEWm6sqzUnAqm4S+P
+         Amlw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:list-unsubscribe:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=oka0V6xcrvkDT9yoUwBxqP+BqptHNYZ9qBvwcsf6048=;
+        fh=uCufiK/xCRR3oszLORvHXs1yoD9tmHYeJwwrv0W0vNE=;
+        b=OPLJ/fFbChhzh34vOVJ4e11LAY62c6FFbF8U3jO5GGxgOH+6EXG10NoTclwbJe3rnA
+         AxSXTE2wByhhI6kYFUVOWw7onF5XmqT5wn/TO8QDLJvQD6uURFXcthFPz84K3UiVChNd
+         HaLaPj4CaD1TvBQWPlaHAoOpfUqYY3Kcg5vjghmc6Ccxl3EAmd5k/7tK3Hz2OSL1OAWw
+         n/wDEtyWCRA3c5dGU/uqAljgH1SOTpChwrq2/CBxYYD5lxy+Dmk7rwNwUNXEwDUeflDl
+         2cS1jXGVL191ld/QvScXjZjyKu/sCpwpipqeuLqxFqBmNeEGK+MxStLAlasS0IW3XvJq
+         BMtQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@medium.com header.s=m1 header.b=X5IlrjAr;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ct2jEv0e;
+       spf=pass (google.com: domain of bounces+1871179-826c-acsd2397=gmail.com@email.medium.com designates 149.72.36.156 as permitted sender) smtp.mailfrom="bounces+1871179-826c-acsd2397=gmail.com@email.medium.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=medium.com
+Return-Path: <bounces+1871179-826c-acsd2397=gmail.com@email.medium.com>
+Received: from o29.ptr6494.medium.com (o29.ptr6494.medium.com. [149.72.36.156])
+        by mx.google.com with ESMTPS id 68-20020a630147000000b005be27af74basi6569947pgb.33.2023.11.25.18.14.26
+        for <acsd2397@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 25 Nov 2023 18:14:27 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+1871179-826c-acsd2397=gmail.com@email.medium.com designates 149.72.36.156 as permitted sender) client-ip=149.72.36.156;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@medium.com header.s=m1 header.b=X5IlrjAr;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ct2jEv0e;
+       spf=pass (google.com: domain of bounces+1871179-826c-acsd2397=gmail.com@email.medium.com designates 149.72.36.156 as permitted sender) smtp.mailfrom="bounces+1871179-826c-acsd2397=gmail.com@email.medium.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=medium.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=medium.com;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=m1; bh=oka0V6xcrvkDT9yoUwBxqP+BqptHNYZ9qBvwcsf6048=;
+	b=X5IlrjArju7eDB8lgZ9cnzdalF9T/X27a3wZbxiVSmAqcTE8WLfEx7j9Rl1wjznC9TsH
+	PUhbYUuXpa+Ilf54xgyqy/HuroYhXiU1C/UE3PH2BVZV50WFZLDkYOtmZI0Pa/QXNIFtuc
+	YflH/+ripAFPP2bnOcZnGuIgX4994Hfz0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=oka0V6xcrvkDT9yoUwBxqP+BqptHNYZ9qBvwcsf6048=;
+	b=ct2jEv0eAFD4p24ikL+eNB5cdc/fOpcyN2wT7tNLDZ+mdwa5AQdTTX0BH4zYo+9SO3Ai
+	3aT+1HEc5+FiRyB9uEoUGZYZ2RXiPoI8kXzW98sapEE4sNgpzO9+aeSaYn8AIsVL1+5IdR
+	HXRiFGkAeWP8Xb3d2PYXLgJM8AjhbcaMk=
+Received: by filterdrecv-78db7c6dd4-n6jl6 with SMTP id filterdrecv-78db7c6dd4-n6jl6-1-6562AA01-10
+        2023-11-26 02:14:25.644356938 +0000 UTC m=+3396780.400045085
+Received: from MTg3MTE3OQ (unknown)
+	by geopod-ismtpd-58 (SG) with HTTP
+	id pwy8rDuKQzSWs6F3UkLkwA
+	Sun, 26 Nov 2023 02:14:25.500 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=25aa36b4924590c8c6ef8b167a5ef4ea5d3983c7ae18b12c22c75a90574f
+Date: Sun, 26 Nov 2023 02:14:25 +0000 (UTC)
+From: Medium <noreply@medium.com>
+Mime-Version: 1.0
+Message-ID: <pwy8rDuKQzSWs6F3UkLkwA@geopod-ismtpd-58>
+Subject: You just published your first story! Now what?
+Reply-To: noreply@medium.com
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fmedium=2Ecom=2Fme=2Femail-settings=2Fd1551e4af4fd=2F3d463cc42a9?=
+ =?us-ascii?Q?8=3Fsource=3Demail-d1551e4af4fd-17009648653?=
+ =?us-ascii?Q?69-writer=2Ewelcome------0---------------?=
+ =?us-ascii?Q?----e5203075=5F3f3c=5F4ffd=5Fbbb7=5F4c356748939?=
+ =?us-ascii?Q?6&type=3Doutreach=3E?=
+X-Feedback-ID: 1871179:SG
+X-SG-EID: 
+ =?us-ascii?Q?EycFin8l6jglS6Ld5Ew7zJaveO6GVAbbWIwcbEvBn452lO5c4O2kKTZGbbe2W=2F?=
+ =?us-ascii?Q?M4q8rvGenbVridHMWUpxCM6svJ8Omz1RXpbKZSL?=
+ =?us-ascii?Q?V5EjmYZw9e9tlWY7gfMhAMqneM4SsACKyF3MEWV?=
+ =?us-ascii?Q?Rk3y=2Fx6kjQojzNRcKBmqbDfzk7imhSyqNacJR9D?=
+ =?us-ascii?Q?=2FIPKnwjMlR4mWasRbfJtwcV2i=2FsWi=2FtXcnn1C+q?=
+ =?us-ascii?Q?EuXhZbDxAz3rYmLSw=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb7vFlO1LmBz2htfK+f+Z6K=2FB74AcUU961VECOlomHT?=
+ =?us-ascii?Q?APPyhxVR60s+sTuFmb5fIVYG1q+nzdthNsYeeGb?=
+ =?us-ascii?Q?uKr7alrSyA1u0AY5UJEBnpM4dToKZar0bsTp7+q?=
+ =?us-ascii?Q?puTs7UCl+V27=2F12WQQXEg2vf1I9nhqA=3D?=
+To: acsd2397@gmail.com
+X-Entity-ID: d6ofVpquKvAN+h+YqeR6/A==
+
+--25aa36b4924590c8c6ef8b167a5ef4ea5d3983c7ae18b12c22c75a90574f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Hydra, hitting "publish" might feel scary, exciting, or rewarding (and ofte=
+n all three). So from all of us, congratulations on sharing your story with=
+ the world. You're now part of a living network of passionate readers and w=
+riters. Welcome - we can't wait to see what you'll write next.
+
+=E2=80=93 The Creator Success Team
+
+Pat yourself on the back - you did it.
+Set up your profile and bio (https://medium.com/creators-hub/you-are-your-s=
+torys-best-asset-fd70c7d8c32?source=3Demail-d1551e4af4fd-1700964865369-writ=
+er.welcome-------------------------e5203075_3f3c_4ffd_bbb7_4c3567489396)
+ if you haven't yet. With a branded profile, it's easier for readers to dis=
+cover, follow, and recognize your work.
+Start growing your audience. First, connect to Twitter (https://blog.medium=
+.com/connect-to-your-twitter-network-on-medium-e36196465cf8?source=3Demail-=
+d1551e4af4fd-1700964865369-writer.welcome-------------------------e5203075_=
+3f3c_4ffd_bbb7_4c3567489396)
+ so your Twitter network can easily find and follow you on Medium. Second, =
+share your story anywhere you have a following, like Twitter, Instagram, Fa=
+cebook, and LinkedIn, and ask your connections on those networks to follow =
+you on Medium.
+
+"Even for experienced writers, forming a writing habit can be tough. To get=
+ in a groove, check out this helpful list of 10 Ways To Support Your Writin=
+g Habit (https://medium.com/creators-hub/10-ways-to-support-your-writing-ha=
+bit-f302598f9709?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome--=
+-----------------------e5203075_3f3c_4ffd_bbb7_4c3567489396)
+." - Kawandeep
+"Sharing your writing on social media might make you feel cringe-y. Here ar=
+e some tips (https://medium.com/creators-hub/how-to-self-promote-without-tu=
+rning-people-off-ee8ce3763b6f?source=3Demail-d1551e4af4fd-1700964865369-wri=
+ter.welcome-------------------------e5203075_3f3c_4ffd_bbb7_4c3567489396)
+ for self-promoting without turning people off." - Elie
+"A powerful headline can make all the difference. Hone your headline-writin=
+g skills here (https://medium.com/creators-hub/how-to-write-a-headline-a72a=
+b3449150?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome----------=
+---------------e5203075_3f3c_4ffd_bbb7_4c3567489396)
+ and here (https://medium.com/creators-hub/23-examples-of-effective-headlin=
+es-2e7f753476f1?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome---=
+----------------------e5203075_3f3c_4ffd_bbb7_4c3567489396)
+." - Shaq
+"Still have questions? Here's a quick FAQ (https://medium.com/creators-hub/=
+interested-in-writing-on-medium-start-here-8b8191cb6618?source=3Demail-d155=
+1e4af4fd-1700964865369-writer.welcome-------------------------e5203075_3f3c=
+_4ffd_bbb7_4c3567489396)
+ on how to get started. And we're always updating Creators Hub, our blog fo=
+r writers. Consider giving it a follow." - Ashley
+
+Sent by Medium (https://medium.com/?source=3Demail-d1551e4af4fd-17009648653=
+69-writer.welcome-------------------------e5203075_3f3c_4ffd_bbb7_4c3567489=
+396)
+=C2=B7Medium, 548 Market St, PMB 42061, San=C2=A0Francisco,=C2=A0CA=C2=A094=
+104
+Unsubscribe (https://medium.com/me/email-settings/d1551e4af4fd/3d463cc42a98=
+?type=3Doutreach&source=3Demail-d1551e4af4fd-1700964865369-writer.welcome--=
+-----------------------e5203075_3f3c_4ffd_bbb7_4c3567489396)
+ from this type of email=C2=B7Careers (https://medium.com/jobs-at-medium/wo=
+rk-at-medium-959d1a85284e?source=3Demail-d1551e4af4fd-1700964865369-writer.=
+welcome-------------------------e5203075_3f3c_4ffd_bbb7_4c3567489396)
+=C2=B7Help Center (https://help.medium.com/hc/en-us?source=3Demail-d1551e4a=
+f4fd-1700964865369-writer.welcome-------------------------e5203075_3f3c_4ff=
+d_bbb7_4c3567489396)
+=C2=B7Privacy Policy (https://policy.medium.com/medium-privacy-policy-f03bf=
+92035c9?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome-----------=
+--------------e5203075_3f3c_4ffd_bbb7_4c3567489396)
+=C2=B7Terms of service (https://policy.medium.com/medium-terms-of-service-9=
+db0094a1e0f?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome-------=
+------------------e5203075_3f3c_4ffd_bbb7_4c3567489396)
+--25aa36b4924590c8c6ef8b167a5ef4ea5d3983c7ae18b12c22c75a90574f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<html lang=3D"en" style=3D"box-sizing: border-box;"><head><meta http-equiv=
+=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><meta name=3D"view=
+port" content=3D"width=3Ddevice-width, initial-scale=3D1, maximum-scale=3D5=
+"><meta name=3D"robots" content=3D"none"><style>
+.hljs-link,
+.hljs-regexp {
+  color: #0e0eff;
+}
+</style><style>
+@media all and (min-width: 728px) and (max-width: 903.98px) {
+  .e {
+    background-color: rgba(242, 242, 242, 1) !important;
+  }
+
+  .f {
+    padding: 6px 0 40px 0;
+  }
+
+  .y {
+    display: block;
+  }
+
+  .af {
+    display: none;
+  }
+
+  .aj {
+    padding: 24px 0px 34px !important;
+  }
+}
+</style><style>
+@media all and (min-width: 904px) and (max-width: 1079.98px) {
+  .g {
+    background-color: rgba(242, 242, 242, 1) !important;
+  }
+
+  .h {
+    padding: 6px 0 40px 0;
+  }
+
+  .z {
+    display: block;
+  }
+
+  .ag {
+    display: none;
+  }
+
+  .ak {
+    padding: 24px 0px 34px !important;
+  }
+}
+</style><style>
+@media all and (min-width: 1080px) {
+  .i {
+    background-color: rgba(242, 242, 242, 1) !important;
+  }
+
+  .j {
+    padding: 6px 0 40px 0;
+  }
+
+  .ab {
+    display: block;
+  }
+
+  .ah {
+    display: none;
+  }
+
+  .al {
+    padding: 24px 0px 34px !important;
+  }
+}
+</style><style>
+@media all and (max-width: 551.98px) {
+  .w {
+    display: none;
+  }
+
+  .ac {
+    display: block;
+  }
+}
+</style><style>
+@media all and (min-width: 552px) and (max-width: 727.98px) {
+  .x {
+    display: block;
+  }
+
+  .ae {
+    display: none;
+  }
+}
+</style><link id=3D"glyph_preload_link" rel=3D"preload" as=3D"style" type=
+=3D"text/css" href=3D"https://glyph.medium.com/css/unbound.css"><link id=3D=
+"glyph_link" rel=3D"stylesheet" type=3D"text/css" href=3D"https://glyph.med=
+ium.com/css/unbound.css"></head><body style=3D"margin: 0; padding: 0;"><div=
+ class=3D"d e f g h i j" style=3D"background-color: rgba(255, 255, 255, 1);=
+"><table class=3D"k l m n" role=3D"presentation" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"margin-left: auto; margin-right: auto; width: 100%; max-=
+width: 600px;" width=3D"100%"><tbody><tr><td class=3D"m o" style=3D"width: =
+100%; min-width: 100%;" width=3D"100%"><img src=3D"https://medium.com/_/sta=
+t?event=3Demail.opened&amp;emailId=3De5203075-3f3c-4ffd-bbb7-4c3567489396&a=
+mp;source=3Demail-d1551e4af4fd-1700964865369-writer.welcome----------------=
+---------e5203075_3f3c_4ffd_bbb7_4c3567489396" width=3D"1" height=3D"1" alt=
+><div class=3D"b c" style=3D"font-family: sohne, 'Helvetica Neue', Helvetic=
+a, Arial, sans-serif; color: rgba(25, 25, 25, 1);"><div class=3D"d p" style=
+=3D"background-color: rgba(255, 255, 255, 1); padding: 30px;"><div class=3D=
+"q" style=3D"margin-bottom: 44px;"><a href=3D"https://medium.com/?source=3D=
+email-d1551e4af4fd-1700964865369-writer.welcome-------------------------e52=
+03075_3f3c_4ffd_bbb7_4c3567489396" aria-label=3D"Medium homepage link" styl=
+e=3D"color: inherit; text-decoration: none;"><img alt class src=3D"https://=
+miro.medium.com/max/300/1*Yp9hwqTVGv2zj4bDIG4vug.png" width=3D"150"></a></d=
+iv><div class=3D"r s t u" style=3D"background-color: #9E39FF; border-top: 1=
+px solid rgba(0, 0, 0, 1); border-bottom: 1px solid rgba(0, 0, 0, 1); paddi=
+ng: 24px 30px 40px;"><div class=3D"v" style=3D"text-align: center;"><div cl=
+ass=3D"w x y z ab"><img alt class src=3D"https://miro.medium.com/max/820/4*=
+X0p6Kb_Aqyb_4--owwbeVA.png" width=3D"410"></div><div class=3D"ac ae af ag a=
+h"><img alt class src=3D"https://miro.medium.com/max/510/4*X0p6Kb_Aqyb_4--o=
+wwbeVA.png" width=3D"255"></div></div><div class=3D"ai aj ak al" style=3D"p=
+adding: 20px 0px 32px;"><div class=3D"w x y z ab"><img alt=3D"A round of ap=
+plause" class src=3D"https://miro.medium.com/max/876/4*F9isdjuv-I_H3l5k9ITZ=
+ew.png" width=3D"438"></div><div class=3D"ac ae af ag ah"><img alt=3D"A rou=
+nd of applause" class src=3D"https://miro.medium.com/max/510/4*F9isdjuv-I_H=
+3l5k9ITZew.png" width=3D"255"></div></div><div class=3D"am an ao ap" style=
+=3D"font-weight: 400; font-size: 16px; line-height: 24px; color: rgba(41, 4=
+1, 41, 1);"><span class=3D"a" style=3D"color: rgba(255, 255, 255, 1);">Hydr=
+a, hitting =E2=80=9Cpublish=E2=80=9D might feel scary, exciting, or rewardi=
+ng (and often all three). So from all of us, congratulations on sharing you=
+r story with the world. You=E2=80=99re now part of a living network of pass=
+ionate readers and writers. Welcome =E2=80=94 we can=E2=80=99t wait to see =
+what you=E2=80=99ll write next.<br><br>=E2=80=93 The Creator Success Team</=
+span></div></div><div class=3D"t aq v" style=3D"border-bottom: 1px solid rg=
+ba(0, 0, 0, 1); text-align: center; padding: 18px 0px;"><img alt=3D"What&#x=
+27;s next?" class src=3D"https://miro.medium.com/max/326/4*hAsRZm7CKWMO08c8=
+MnUfzQ.png" width=3D"163"></div><div class=3D"ar" style=3D"padding: 24px 44=
+px 20px 26px;"><div class=3D"am an ao ap" style=3D"font-weight: 400; font-s=
+ize: 16px; line-height: 24px; color: rgba(41, 41, 41, 1);"><ul style=3D"mar=
+gin: 0; padding: 0; list-style: disc; margin-left: 24px;"><li class=3D"as" =
+style=3D"padding-bottom: 18px;">Pat yourself on the back =E2=80=94 you did =
+it.</li><li class=3D"as" style=3D"padding-bottom: 18px;"><a class=3D"at" hr=
+ef=3D"https://medium.com/creators-hub/you-are-your-storys-best-asset-fd70c7=
+d8c32?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome-------------=
+------------e5203075_3f3c_4ffd_bbb7_4c3567489396" aria-label=3D"Guide to be=
+tter profile link" style=3D"color: inherit; text-decoration: underline;">Se=
+t up your profile and bio</a> if you haven=E2=80=99t yet. With a branded pr=
+ofile, it=E2=80=99s easier for readers to discover, follow, and recognize y=
+our work.</li><li class=3D"as" style=3D"padding-bottom: 18px;">Start growin=
+g your audience. First, <a class=3D"at" href=3D"https://blog.medium.com/con=
+nect-to-your-twitter-network-on-medium-e36196465cf8?source=3Demail-d1551e4a=
+f4fd-1700964865369-writer.welcome-------------------------e5203075_3f3c_4ff=
+d_bbb7_4c3567489396" aria-label=3D"Guide to connect to Twitter link" style=
+=3D"color: inherit; text-decoration: underline;">connect to Twitter</a> so =
+your Twitter network can easily find and follow you on Medium. Second, shar=
+e your story anywhere you have a following, like Twitter, Instagram, Facebo=
+ok, and LinkedIn, and ask your connections on those networks to follow you =
+on Medium.</li></ul></div></div><div class=3D"au s" style=3D"border-top: 1p=
+x solid rgba(0, 0, 0, 1); background-color: #E6C0FF;"><div class=3D"t av v"=
+ style=3D"border-bottom: 1px solid rgba(0, 0, 0, 1); text-align: center; pa=
+dding: 12px 0px;"><div class=3D"w x y z ab"><img alt=3D"Creator Success Tip=
+s" class src=3D"https://miro.medium.com/max/802/4*b0h-11gBZdi3OuL_xWD4_Q.pn=
+g" width=3D"401"></div><div class=3D"ac ae af ag ah"><img alt=3D"Creator Su=
+ccess Tips" class src=3D"https://miro.medium.com/max/700/4*b0h-11gBZdi3OuL_=
+xWD4_Q.png" width=3D"350"></div></div><div class=3D"aw" style=3D"padding: 2=
+4px 34px 20px 18px;"><div class=3D"am an ao ap" style=3D"font-weight: 400; =
+font-size: 16px; line-height: 24px; color: rgba(41, 41, 41, 1);"><ul style=
+=3D"margin: 0; padding: 0; list-style: disc; margin-left: 24px;"><li class=
+=3D"as" style=3D"padding-bottom: 18px;">=E2=80=9CEven for experienced write=
+rs, forming a writing habit can be tough. To get in a groove, check out thi=
+s helpful list of <a class=3D"at" href=3D"https://medium.com/creators-hub/1=
+0-ways-to-support-your-writing-habit-f302598f9709?source=3Demail-d1551e4af4=
+fd-1700964865369-writer.welcome-------------------------e5203075_3f3c_4ffd_=
+bbb7_4c3567489396" aria-label=3D"Writing habits link" style=3D"color: inher=
+it; text-decoration: underline;">10 Ways To Support Your Writing Habit</a>.=
+=E2=80=9D =E2=80=94 <b>Kawandeep</b></li><li class=3D"as" style=3D"padding-=
+bottom: 18px;">=E2=80=9CSharing your writing on social media might make you=
+ feel cringe-y. <a class=3D"at" href=3D"https://medium.com/creators-hub/how=
+-to-self-promote-without-turning-people-off-ee8ce3763b6f?source=3Demail-d15=
+51e4af4fd-1700964865369-writer.welcome-------------------------e5203075_3f3=
+c_4ffd_bbb7_4c3567489396" aria-label=3D"Tips for social media link" style=
+=3D"color: inherit; text-decoration: underline;">Here are some tips</a> for=
+ self-promoting without turning people off.=E2=80=9D =E2=80=94 <b>Elie</b><=
+/li><li class=3D"as" style=3D"padding-bottom: 18px;">=E2=80=9CA powerful he=
+adline can make all the difference. Hone your headline-writing skills <a cl=
+ass=3D"at" href=3D"https://medium.com/creators-hub/how-to-write-a-headline-=
+a72ab3449150?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome------=
+-------------------e5203075_3f3c_4ffd_bbb7_4c3567489396" aria-label=3D"Bett=
+er headline link" style=3D"color: inherit; text-decoration: underline;">her=
+e</a> and <a class=3D"at" href=3D"https://medium.com/creators-hub/23-exampl=
+es-of-effective-headlines-2e7f753476f1?source=3Demail-d1551e4af4fd-17009648=
+65369-writer.welcome-------------------------e5203075_3f3c_4ffd_bbb7_4c3567=
+489396" aria-label=3D"23 effectives headlines link" style=3D"color: inherit=
+; text-decoration: underline;">here</a>.=E2=80=9D =E2=80=94 <b>Shaq</b></li=
+><li class=3D"as" style=3D"padding-bottom: 18px;">=E2=80=9CStill have quest=
+ions? Here=E2=80=99s a quick <a class=3D"at" href=3D"https://medium.com/cre=
+ators-hub/interested-in-writing-on-medium-start-here-8b8191cb6618?source=3D=
+email-d1551e4af4fd-1700964865369-writer.welcome-------------------------e52=
+03075_3f3c_4ffd_bbb7_4c3567489396" aria-label=3D"FAQ link" style=3D"color: =
+inherit; text-decoration: underline;">FAQ</a> on how to get started. And we=
+=E2=80=99re always updating <a class=3D"at" href=3D"https://medium.com/crea=
+tors-hub?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome----------=
+---------------e5203075_3f3c_4ffd_bbb7_4c3567489396" aria-label=3D"Creators=
+ hub blog link" style=3D"color: inherit; text-decoration: underline;"><i>Cr=
+eators Hub</i></a>, our blog for writers. Consider giving it a follow.=E2=
+=80=9D =E2=80=94 <b>Ashley</b></li></ul></div></div></div><div class=3D"s a=
+x ay" style=3D"border-top: 1px solid rgba(0, 0, 0, 1); margin-top: 0px; pad=
+ding: 26px 0 0;"><div class=3D"v" style=3D"text-align: center;"><div class=
+=3D"am az ba ap" style=3D"font-weight: 400; color: rgba(41, 41, 41, 1); fon=
+t-size: 13px; line-height: 20px;"><div class>Sent by <a href=3D"https://med=
+ium.com/?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome----------=
+---------------e5203075_3f3c_4ffd_bbb7_4c3567489396" style=3D"color: inheri=
+t; text-decoration: none;">Medium</a><span class=3D"bb bc" style=3D"padding=
+-left: 4px; padding-right: 4px;">=C2=B7</span>Medium, 548 Market St, PMB 42=
+061, San=C2=A0Francisco,=C2=A0CA=C2=A094104</div><a class=3D"at" href=3D"ht=
+tps://medium.com/me/email-settings/d1551e4af4fd/3d463cc42a98?type=3Doutreac=
+h&amp;source=3Demail-d1551e4af4fd-1700964865369-writer.welcome-------------=
+------------e5203075_3f3c_4ffd_bbb7_4c3567489396" style=3D"color: inherit; =
+text-decoration: underline;">Unsubscribe</a> from this type of email<span c=
+lass=3D"bb bc" style=3D"padding-left: 4px; padding-right: 4px;">=C2=B7</spa=
+n><a class=3D"at" href=3D"https://medium.com/jobs-at-medium/work-at-medium-=
+959d1a85284e?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome------=
+-------------------e5203075_3f3c_4ffd_bbb7_4c3567489396" style=3D"color: in=
+herit; text-decoration: underline;">Careers</a><span class=3D"bb bc" style=
+=3D"padding-left: 4px; padding-right: 4px;">=C2=B7</span><a class=3D"at" hr=
+ef=3D"https://help.medium.com/hc/en-us?source=3Demail-d1551e4af4fd-17009648=
+65369-writer.welcome-------------------------e5203075_3f3c_4ffd_bbb7_4c3567=
+489396" style=3D"color: inherit; text-decoration: underline;">Help Center</=
+a><span class=3D"bb bc" style=3D"padding-left: 4px; padding-right: 4px;">=
+=C2=B7</span><a class=3D"at" href=3D"https://policy.medium.com/medium-priva=
+cy-policy-f03bf92035c9?source=3Demail-d1551e4af4fd-1700964865369-writer.wel=
+come-------------------------e5203075_3f3c_4ffd_bbb7_4c3567489396" style=3D=
+"color: inherit; text-decoration: underline;">Privacy Policy</a><span class=
+=3D"bb bc" style=3D"padding-left: 4px; padding-right: 4px;">=C2=B7</span><a=
+ class=3D"at" href=3D"https://policy.medium.com/medium-terms-of-service-9db=
+0094a1e0f?source=3Demail-d1551e4af4fd-1700964865369-writer.welcome---------=
+----------------e5203075_3f3c_4ffd_bbb7_4c3567489396" style=3D"color: inher=
+it; text-decoration: underline;">Terms of service</a></div></div></div></di=
+v></div></td></tr></tbody></table></div><img src=3D"https://u1871179.ct.sen=
+dgrid.net/wf/open?upn=3DrfJfcXelzYh-2BiubuVmyjn9wcjbeEumWeqNATx6ZEWUwEn7gYJ=
+J7Mj4lfhDiRCMIFeSP69zv3c6RkDbNOK-2BlJvk-2FOuqvxhNmW5hyvdUnSzxxv-2ByX9sthQTW=
+8kiTRqUTapXU5gbM10IalzzvY4K8mfgGLiJPKyaNN-2FBJg5tJ46c1FYtkgXzslWFqzxB9IVfjg=
+k9Jp0fScO41iFtEfxpah4IwlI7Dw7avz-2Bl5K0Va0TUYZ7s8ZiWcwNj2TUXwk98B-2F4nv7hBK=
+bZ-2Be9azSXWWSeVd-2BMRZrA1F-2BwEBVXFTybOyaR9aDMwGO87ersTH38Yt6-2BqrR-2BIet-=
+2BeKfL8JaGZb41XHybeQVwNCLUGQOenIFiydGmxK13TWsWF2DPU7BkC6DiU" alt=3D"" width=
+=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !=
+important;border-width:0 !important;margin-top:0 !important;margin-bottom:0=
+ !important;margin-right:0 !important;margin-left:0 !important;padding-top:=
+0 !important;padding-bottom:0 !important;padding-right:0 !important;padding=
+-left:0 !important;"/></body></html>
+--25aa36b4924590c8c6ef8b167a5ef4ea5d3983c7ae18b12c22c75a90574f--
